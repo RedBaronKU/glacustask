@@ -2,6 +2,7 @@ import React from 'react'
 import {useTable} from 'react-table'
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
+import {Input,Button} from '@material-ui/core'
 
 function getModalStyle() {
   const top = 50 ;
@@ -40,10 +41,54 @@ function Employee() {
         const body = (
             <div style={modalStyle} className={classes.paper}>
             <h2 id="simple-modal-title">Text in a modal</h2>
-            <p id="simple-modal-description">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </p>
-            <SimpleModal />
+            <form className="signUp">
+                    <Input 
+                        type="text"
+                        placeholder="Name"
+                        //value={username}
+                        //onChange={(e)=>setUsername(e.target.value)}
+                    />
+                    
+                    <Input type="text"
+                        placeholder="Employee code"
+                        //value={email}
+                        //onChange={(e)=>setEmail(e.target.value)}
+                    />
+                    <input type="email"
+                        placeholder="Email"
+                        //value={password}
+                        //onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <label for="dob">Birthday:</label>
+                    <Input type="date"
+                        id="dob"
+                        //placeholder="DOB"
+                        //value={password}
+                        //onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <label for="dob">Date of Joining:</label>
+                    <Input type="date"
+                        id="doj"
+                        //placeholder="DOJ"
+                        //value={password}
+                        //onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <Input type="text"
+                        placeholder="Salary"
+                        //value={password}
+                        //onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <input type="radio" id="male" name="gender" value="male"/>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female"/>
+                    <label for="female">Female</label>
+                    <select name="cars" id="cars">
+                        <option value="volvo">Volvo</option>
+                    </select>
+                    <Button type="submit" /*onClick={signup}*/>Save</Button>
+                    <Button type="submit" /*onClick={signup}*/>Close</Button>
+                </form>
+            
             </div>
         );
 
